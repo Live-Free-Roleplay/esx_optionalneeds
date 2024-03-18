@@ -1,4 +1,4 @@
-ESX.RegisterUsableItem('beer', function(source)
+--[[ESX.RegisterUsableItem('beer', function(source)
 
 	local xPlayer = ESX.GetPlayerFromId(source)
 
@@ -8,4 +8,4 @@ ESX.RegisterUsableItem('beer', function(source)
 	TriggerClientEvent('esx_optionalneeds:onDrink', source)
 	TriggerClientEvent('esx:showNotification', source, TranslateCap('used_beer'))
 
-end)
+end)--]]
