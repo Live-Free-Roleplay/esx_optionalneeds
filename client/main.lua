@@ -88,7 +88,7 @@ AddEventHandler('esx_status:loaded', function(status)
       end
     end,
     function(status)
-      status.remove(1500)
+      status.remove(1000)
     end
   )
 
@@ -110,11 +110,11 @@ AddEventHandler('esx_status:loaded', function(status)
 
           local level = 0
 
-          if status.val <= 250000 then
+          if status.val >= 250000 then
             level = 0
-          elseif status.val <= 500000 then
+          elseif status.val >= 500000 then
             level = 1
-          else
+          elseif status.val >= 750000 then
             level = 2
           end
 
