@@ -88,7 +88,7 @@ AddEventHandler('esx_status:loaded', function(status)
       end
     end,
     function(status)
-      status.remove(1000)
+      status.remove(2000)
     end
   )
 
