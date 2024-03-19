@@ -97,10 +97,9 @@ AddEventHandler('esx_status:loaded', function(status)
 		while true do
 
 			Wait(1000)
-
+      
 			TriggerEvent('esx_status:getStatus', 'drunk', function(status)
-				
-				if status.val > 0 then
+				if status.val >= 250000 then
 					
           local start = true
 
@@ -110,14 +109,13 @@ AddEventHandler('esx_status:loaded', function(status)
 
           local level = 0
 
-          if status.val >= 250000 then
+          if status.val >= 250000 and status.val <= 500000 then
             level = 0
-          elseif status.val >= 500000 then
+          elseif status.val >= 500000 and status.val <= 750000 then
             level = 1
           elseif status.val >= 750000 then
             level = 2
           end
-
           if level ~= DrunkLevel then
             Drunk(level, start)
           end
@@ -126,7 +124,7 @@ AddEventHandler('esx_status:loaded', function(status)
           DrunkLevel     = level
 				end
 
-				if status.val == 0 then
+				if status.val < 250000 then
           
           if IsAlreadyDrunk then
             Reality()
